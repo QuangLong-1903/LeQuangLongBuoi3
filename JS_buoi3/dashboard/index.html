@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <h2>📊 Product Dashboard</h2>
+
+  <div class="controls">
+    <input
+      type="text"
+      placeholder="🔍 Tìm theo title..."
+      oninput="handleSearch(this.value)"
+    />
+
+    <select onchange="changePageSize(this.value)">
+      <option value="5">5 / trang</option>
+      <option value="10" selected>10 / trang</option>
+      <option value="20">20 / trang</option>
+    </select>
+  </div>
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th onclick="sortBy('title')">Title ⬍</th>
+        <th onclick="sortBy('price')">Price ⬍</th>
+        <th>Category</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="productBody"></tbody>
+  </table>
+
+  <div id="pagination" class="pagination"></div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
